@@ -1,0 +1,20 @@
+<?php
+// config.php
+
+// Database Credentials
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', ''); 
+define('DB_NAME', 'food');  
+
+// Attempt to connect to MySQL database
+$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($conn === false){
+    die("ERROR: Could not connect. " . $conn->connect_error);
+}
+
+// Start the session (important for login/logout)
+session_start();
+?>
